@@ -131,6 +131,17 @@ async function main(){
   for(var i  = 0; i < table.rows.length; i++){
     table.rows[i].cells[5].onclick = function(){
       index = this.parentElement.rowIndex;
+      index = parseInt(table.rows[index].cells[4].innerHTML, 10);
+      if(index < 4){
+        index =index + 3;
+      }
+      else if(index == 7){
+
+      }
+      else{
+        index = index - 3;
+      }
+      console.log(index);
       window.location = "/info_films/" +index;
     };
 
